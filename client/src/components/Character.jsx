@@ -9,7 +9,7 @@ const Character = ({character, currChar, setCurrChar}) => {
 
   return (
     <div className={currChar === character.id ? "current-character" : "character-box"} onClick={handleClick}>
-      <img className="character" src={character.url}/>
+      <img className="character" id={character.name} src={character.url}/>
     </div>
   );
 }

@@ -22,7 +22,16 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: ['file-loader'],
+        // type: 'asset/resource',
+        use: [{
+          loader: 'url-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images',
+            publicPath: 'images',
+            emitFile: true,
+            esModule: false
+        }}]
       },
       {
         test: /\.txt$/,
